@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pokemon Options Debe de hacer match con el snapshot  1`] = `[Function]`;
+
+exports[`PokemonOptions Component Debe de hacer match con el snapshot  1`] = `[Function]`;
