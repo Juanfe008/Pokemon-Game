@@ -1,4 +1,16 @@
 html, body {
-    background-color: #f1f1f1;
-    margin: 0px;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; 
 }
+
+body {
+    background-color: #f1f1f1;
+    background-image: url('/public/pokemon\ background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100%;
+}
+

@@ -17,7 +17,7 @@
     
     <template v-if="showAnswer">
       <h2 class="fade-in">{{ message }}</h2>
-      <button @click="newGame">
+      <button @click="newGame" class="newGame-button">
         Nuevo Juego
       </button>
     </template>
@@ -63,13 +63,13 @@ export default {
 
       if (selectedId == this.pokemon.id){
         
-        this.message = `Correcto! es ${ this.pokemon.name }`
+        this.message = `Correcto! es ${ this.pokemon.name }!`
 
 
       }
       else{
 
-        this.message = `Oh no, es ${ this.pokemon.name }`
+        this.message = `Oh no, es ${ this.pokemon.name }...`
 
       }
 
@@ -93,3 +93,22 @@ export default {
   }
 }
 </script>
+
+<style>
+.newGame-button{
+  background-color: white;
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+
+}
+
+.newGame-button:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to right, #4ecdc4, #2b8c99);
+}
+
+
+</style>
