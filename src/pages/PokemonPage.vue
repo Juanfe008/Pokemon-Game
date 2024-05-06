@@ -1,10 +1,9 @@
 <template>
 
   <h1 v-if="!pokemon" >Espere...</h1>
-  
   <div v-else>
   
-    <h1>¿Quién es este Pokémon?</h1>
+    <h1 class="title">¿Quién es este Pokémon?</h1>
 
     <PokemonPicture 
         :pokemon-id="pokemon.id" 
@@ -16,13 +15,11 @@
     />
     
     <template v-if="showAnswer">
-      <h2 class="fade-in">{{ message }}</h2>
+      <h2 class="fade-in message">{{ message }}</h2>
       <button @click="newGame" class="newGame-button">
         Nuevo Juego
       </button>
     </template>
-
-
 
   </div>
 </template>
@@ -99,6 +96,8 @@ export default {
   background-color: white;
   padding: 5px 10px;
   font-size: 16px;
+  border: #992b2b00;
+  width: 250px;
   border-radius: 25px;
   cursor: pointer;
   transition: box-shadow 0.3s ease;
@@ -110,5 +109,14 @@ export default {
     background: linear-gradient(to right, #4ecdc4, #2b8c99);
 }
 
+.title{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2em;
+    color: #fff; /* Color blanco para contraste */
+}
+
+.message{
+  color: #fff
+}
 
 </style>
