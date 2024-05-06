@@ -1,6 +1,6 @@
 <template>
 
-  <h1 v-if="!pokemon" >Espere...</h1>
+  <h1 v-if="!pokemon" class="title" >Espere...</h1>
   <div v-else>
   
     <h1 class="title">¿Quién es este Pokémon?</h1>
@@ -92,6 +92,13 @@ export default {
 </script>
 
 <style>
+
+.title{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2em;
+    color: #fff; /* Color blanco para contraste */
+}
+
 .newGame-button{
   background-color: white;
   padding: 5px 10px;
@@ -107,12 +114,6 @@ export default {
 .newGame-button:hover {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
     background: linear-gradient(to right, #4ecdc4, #2b8c99);
-}
-
-.title{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2em;
-    color: #fff; /* Color blanco para contraste */
 }
 
 .message{
