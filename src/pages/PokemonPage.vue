@@ -28,12 +28,11 @@
 <script>
 import PokemonOptions from '@/components/PokemonOptions.vue'
 import PokemonPicture from '@/components/PokemonPicture.vue'
-
 import getPokemonOptions from '@/helpers/getPokemonOptions.js'
 
 export default {
 
-  components: { PokemonOptions, PokemonPicture },
+  components: { PokemonOptions, PokemonPicture},
 
   data() {
     return {
@@ -104,7 +103,7 @@ export default {
 
 .newGame-button{
   background-color: white;
-  padding: 5px 10px;
+  padding: 10px;
   font-size: 16px;
   border: #992b2b00;
   width: 250px;
@@ -112,6 +111,7 @@ export default {
   cursor: pointer;
   transition: box-shadow 0.3s ease;
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+  color: #2c3e50;
 
 }
 

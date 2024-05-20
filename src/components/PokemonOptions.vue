@@ -51,6 +51,7 @@ export default {
 ul {
     list-style-type: none;
     text-transform: capitalize;
+    padding: 0;
 }
 
 li {
