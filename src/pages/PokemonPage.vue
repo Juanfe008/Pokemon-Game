@@ -1,5 +1,5 @@
 <template>
-
+  
   <h1 v-if="!pokemon" class="title" >Espere...</h1>
   <div v-else>
   
@@ -11,6 +11,7 @@
 
     <PokemonOptions 
         :pokemons="pokemonArr"
+        :optionSelected="optionSelected" 
         @selection="checkAnswer"
     />
     
@@ -40,14 +41,14 @@ export default {
       pokemon: null,
       showPokemon: false,
       showAnswer: false,
-      message: ''
+      message: '',
+      optionSelected: {isSelected: false, isCorrect: null, selectedId: null},
     }
   },
 
   methods: {
     async mixPokemonArray() {
       this.pokemonArr = await getPokemonOptions()
-
       const rndInt = Math.floor( Math.random() * 4 )
       this.pokemon = this.pokemonArr[ rndInt ]
 
@@ -57,19 +58,21 @@ export default {
       
       this.showPokemon = true
       this.showAnswer = true
+      
 
       if (selectedId == this.pokemon.id){
         
         this.message = `Correcto! es ${ this.pokemon.name }!`
+        this.optionSelected = {isSelected: true, isCorrect: true, selectedId }
 
 
       }
       else{
 
         this.message = `Oh no, es ${ this.pokemon.name }...`
+        this.optionSelected = {isSelected: true, isCorrect: false, selectedId }
 
       }
-
 
     },
 
@@ -78,9 +81,9 @@ export default {
       this.showAnswer = false
       this.pokemonArr = []
       this.pokemon = null
+      this.optionSelected = {isSelected:false, isCorrect: null, selectedId: null}
       this.mixPokemonArray()
       
-
     }
 
   },
@@ -96,7 +99,7 @@ export default {
 .title{
     font-family: 'Montserrat', sans-serif;
     font-size: 2em;
-    color: #fff; /* Color blanco para contraste */
+    color: #fff; 
 }
 
 .newGame-button{
@@ -108,16 +111,17 @@ export default {
   border-radius: 25px;
   cursor: pointer;
   transition: box-shadow 0.3s ease;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
 
 }
 
 .newGame-button:hover {
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
     background: linear-gradient(to right, #4ecdc4, #2b8c99);
 }
 
 .message{
-  color: #fff
+  color: #fff;
+  margin: 10px;
 }
 
 </style>
